@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Calendar, User as UserIcon, ArrowLeft } from 'lucide-react';
+import { Calendar, User as UserIcon, ArrowLeft, Edit, Trash2 } from 'lucide-react';
+import { AuthContext } from '../context/AuthContext';
 
 const PostDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
+  
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -22,6 +26,22 @@ const PostDetail = () => {
     };
     fetchPost();
   }, [id]);
+
+  const deleteHandler = async () => {
+    if (window.confirm('Are you sure you want to delete this post?')) {
+      try {
+        const config = {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        };
+        await axios.delete(`http://localhost:5000/api/posts/${id}`, config);
+        navigate('/');
+      } catch (err) {
+        alert('Error deleting post');
+      }
+    }
+  };
 
   if (loading) return <div style={{ textAlign: 'center', marginTop: '5rem' }}>Loading article...</div>;
   if (error) return (
@@ -49,6 +69,17 @@ const PostDetail = () => {
             <Calendar size={18} color="var(--accent-primary)" />
             <span>Published on {new Date(post.createdAt).toLocaleDateString()}</span>
           </div>
+
+          {user && user._id === post.author?._id && (
+            <div style={{ marginLeft: 'auto', display: 'flex', gap: '1rem' }}>
+              <Link to={`/edit/${post._id}`} className="btn btn-outline" style={{ padding: '0.5rem 1rem', borderColor: 'var(--accent-primary)', color: 'var(--accent-primary)' }}>
+                <Edit size={16} /> Edit
+              </Link>
+              <button onClick={deleteHandler} className="btn btn-outline" style={{ padding: '0.5rem 1rem', borderColor: '#ef4444', color: '#ef4444' }}>
+                <Trash2 size={16} /> Delete
+              </button>
+            </div>
+          )}
         </div>
 
         <div style={{ fontSize: '1.2rem', lineHeight: '1.8', color: 'var(--text-primary)', whiteSpace: 'pre-wrap' }}>

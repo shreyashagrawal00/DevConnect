@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import CreatePost from './pages/CreatePost';
 import PostDetail from './pages/PostDetail';
+import EditPost from './pages/EditPost';
 import { AuthProvider } from './context/AuthContext';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/create" element={<CreatePost />} />
             <Route path="/posts/:id" element={<PostDetail />} />
+            <Route path="/edit/:id" element={<EditPost />} />
           </Routes>
         </main>
       </Router>
