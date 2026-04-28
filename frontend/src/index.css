@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --bg-color: #070d1f;
-  --surface-container: #0f1832;
-  --surface-bright: #1c2a51;
-  --surface-lowest: #000000;
-  --text-primary: #dfe4ff;
-  --text-secondary: #9eaad3;
-  --accent-primary: #47c4ff;
-  --accent-secondary: #bdc2ff;
-  --accent-tertiary: #ddb8ff;
-  --accent-glow: rgba(71, 196, 255, 0.2);
-  --border-color: rgba(104, 116, 155, 0.2);
+  --bg-color: #f8fafc;
+  --surface-container: #ffffff;
+  --surface-bright: #f1f5f9;
+  --surface-lowest: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-primary: #6366f1;
+  --accent-secondary: #4338ca;
+  --accent-tertiary: #818cf8;
+  --accent-glow: rgba(99, 102, 241, 0.1);
+  --border-color: #e2e8f0;
   --font-family: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Space Grotesk', sans-serif;
 }
@@ -33,7 +33,7 @@ body {
 
 /* Glassmorphism utility */
 .glass {
-  background: var(--surface-container);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border-color);
@@ -63,14 +63,14 @@ body {
 
 .btn-primary {
   background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary));
-  color: #070d1f;
+  color: white;
   box-shadow: 0 4px 15px var(--accent-glow);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px var(--accent-glow);
-  filter: contrast(1.1);
+  filter: brightness(1.1);
 }
 
 .btn-outline {
@@ -99,7 +99,7 @@ body {
 .input-control {
   width: 100%;
   padding: 0.875rem 1.125rem;
-  background: var(--surface-lowest);
+  background: #ffffff;
   border: 1px solid var(--border-color);
   border-radius: 6px;
   color: var(--text-primary);
@@ -149,7 +149,7 @@ nav {
   border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
-  background: rgba(7, 13, 31, 0.85);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(20px);
   z-index: 100;
 }
@@ -193,7 +193,7 @@ nav {
 
 .card:hover {
   transform: translateY(-8px);
-  background: var(--surface-bright);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background: var(--surface-container);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
   border-color: var(--accent-primary);
 }
