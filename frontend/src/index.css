@@ -1,12 +1,12 @@
 :root {
-  --bg-color: #0f172a;
-  --card-bg: rgba(30, 41, 59, 0.7);
+  --bg-color: #1B0C0C;
+  --card-bg: rgba(47, 107, 63, 0.08);
   --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --accent-primary: #8b5cf6;
-  --accent-secondary: #3b82f6;
-  --accent-glow: rgba(139, 92, 246, 0.3);
-  --border-color: rgba(255, 255, 255, 0.1);
+  --text-secondary: #cbd5e1;
+  --accent-primary: #2F6B3F;
+  --accent-secondary: #FFF6C0;
+  --accent-glow: rgba(47, 107, 63, 0.4);
+  --border-color: rgba(255, 246, 192, 0.1);
   --font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
