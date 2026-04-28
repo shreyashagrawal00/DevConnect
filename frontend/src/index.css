@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --bg-color: #f8fafc;
-  --surface-container: #ffffff;
-  --surface-bright: #f1f5f9;
-  --surface-lowest: #f1f5f9;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --accent-primary: #6366f1;
-  --accent-secondary: #4338ca;
-  --accent-tertiary: #818cf8;
-  --accent-glow: rgba(99, 102, 241, 0.1);
-  --border-color: #e2e8f0;
+  --bg-color: #0f172a;
+  --surface-container: #1e293b;
+  --surface-bright: #334155;
+  --surface-lowest: #020617;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --accent-primary: #818cf8;
+  --accent-secondary: #6366f1;
+  --accent-tertiary: #a5b4fc;
+  --accent-glow: rgba(129, 140, 248, 0.2);
+  --border-color: rgba(255, 255, 255, 0.08);
   --font-family: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Space Grotesk', sans-serif;
 }
@@ -33,7 +33,7 @@ body {
 
 /* Glassmorphism utility */
 .glass {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(30, 41, 59, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border-color);
@@ -99,7 +99,7 @@ body {
 .input-control {
   width: 100%;
   padding: 0.875rem 1.125rem;
-  background: #ffffff;
+  background: var(--surface-lowest);
   border: 1px solid var(--border-color);
   border-radius: 6px;
   color: var(--text-primary);
@@ -149,7 +149,7 @@ nav {
   border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(15, 23, 42, 0.9);
   backdrop-filter: blur(20px);
   z-index: 100;
 }
@@ -193,7 +193,7 @@ nav {
 
 .card:hover {
   transform: translateY(-8px);
-  background: var(--surface-container);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  background: var(--surface-bright);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   border-color: var(--accent-primary);
 }
